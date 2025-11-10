@@ -1,0 +1,93 @@
+.section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero {
+  background-color: var(--secondary);
+}
+
+.headline {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gridTwo {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gridThree {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gridFour {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+}
+
+.missionText {
+  font-size: 1.5rem;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--primary-foreground);
+    color: var(--primary);
+}

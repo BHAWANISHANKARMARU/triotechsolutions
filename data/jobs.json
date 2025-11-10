@@ -1,0 +1,64 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Senior Full Stack Developer",
+      "location": "Bangalore / Remote",
+      "experience": "5-8 years",
+      "skills": ["React", "Node.js", "TypeScript", "AWS", "MongoDB"],
+      "salary": "₹25-35 LPA",
+      "type": "Permanent",
+      "postedDate": "2025-11-08"
+    },
+    {
+      "id": 2,
+      "title": "DevOps Engineer",
+      "location": "Pune",
+      "experience": "3-5 years",
+      "skills": ["Kubernetes", "Docker", "Jenkins", "GCP", "Terraform"],
+      "salary": "₹18-24 LPA",
+      "type": "Permanent",
+      "postedDate": "2025-11-05"
+    },
+    {
+      "id": 3,
+      "title": "Frontend Developer (React)",
+      "location": "Remote",
+      "experience": "2-4 years",
+      "skills": ["React", "Redux", "Next.js", "Tailwind CSS"],
+      "salary": "₹15-20 LPA",
+      "type": "Contract",
+      "postedDate": "2025-11-01"
+    },
+    {
+      "id": 4,
+      "title": "Data Scientist",
+      "location": "Hyderabad",
+      "experience": "4-6 years",
+      "skills": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "SQL"],
+      "salary": "₹22-30 LPA",
+      "type": "Permanent",
+      "postedDate": "2025-10-28"
+    },
+    {
+      "id": 5,
+      "title": "Junior QA Tester",
+      "location": "Chennai",
+      "experience": "1-2 years",
+      "skills": ["Manual Testing", "Selenium", "Jira", "SQL"],
+      "salary": "₹6-9 LPA",
+      "type": "Permanent",
+      "postedDate": "2025-11-07"
+    },
+    {
+        "id": 6,
+        "title": "Cloud Security Engineer",
+        "location": "Remote",
+        "experience": "5+ years",
+        "skills": ["AWS", "Azure", "SIEM", "Firewall", "Compliance"],
+        "salary": "₹28-40 LPA",
+        "type": "Contract",
+        "postedDate": "2025-10-25"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+/* --- Base Navbar Styles --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  font-family: var(--font-geist-sans);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+}
+
+/* --- Dark Theme (Default) --- */
+.navbar.dark {
+  background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #000000);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.5);
+  --brand-color: #fff;
+  --brand-hover-color: #a78bfa;
+  --nav-link-color: #9ca3af;
+  --nav-link-hover-color: #fff;
+  --nav-link-accent-color: #a78bfa;
+  --theme-button-color: #fff;
+}
+
+/* --- Light Theme --- */
+.navbar.light {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  --brand-color: #000;
+  --brand-hover-color: #3b82f6;
+  --nav-link-color: #4b5563;
+  --nav-link-hover-color: #000;
+  --nav-link-accent-color: #3b82f6;
+  --theme-button-color: #000;
+}
+
+/* --- Component Styles using CSS Variables --- */
+.brand {
+  color: var(--brand-color);
+  transition: color 0.2s ease-in-out;
+}
+
+
+
+.navLink {
+  color: var(--nav-link-color);
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-link-accent-color);
+  transition: width 0.3s ease-out;
+}
+
+.navLink:hover {
+  color: var(--nav-link-hover-color);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.searchButton {
+  background-color: var(--nav-link-accent-color); /* Use a theme-aware color */
+  color: #fff; /* Use a theme-aware color */
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.searchButton:hover {
+  background-color: var(--brand-hover-color); /* Use a theme-aware color */
+}
+
+/* --- Theme Toggle Button --- */
+.themeToggleButton {
+  background: none;
+  border: none;
+  color: var(--theme-button-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownContainer:hover .dropdownMenu {
+  display: flex; /* Use flex to enable flexbox properties in the dropdown */
+  visibility: visible;
+  pointer-events: auto; /* Interactive on hover */
+  clip-path: inset(0 0 0 0);
+}
