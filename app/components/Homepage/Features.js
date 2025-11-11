@@ -70,9 +70,7 @@ const Features = () => {
         {/* How It Works Section */}
         <div>
           <div className="mb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Technology Expertise Across Industries
-            </h2>
+            
           </div>
           {processSteps.map((item) => (
             <div key={item.step} className="relative pl-12 mb-8 last:mb-0">

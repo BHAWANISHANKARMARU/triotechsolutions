@@ -1,58 +1,90 @@
-import React from 'react';
-import styles from '../../for-job-seekers/ForJobSeekers.module.css';
+"use client";
+import { Code2, Cloud, BarChart3, Shield, Briefcase } from "lucide-react";
+
+const categories = [
+  {
+    name: "Software Development",
+    icon: <Code2 className="h-8 w-8" />,
+    jobs: [
+      "Full Stack Developer",
+      "Frontend Developer (React, Angular, Vue)",
+      "Backend Developer (Java, Python, Node.js)",
+      "Mobile Developer (iOS, Android, React Native)",
+    ],
+  },
+  {
+    name: "Cloud & Infrastructure",
+    icon: <Cloud className="h-8 w-8" />,
+    jobs: [
+      "Cloud Engineer (AWS, Azure, GCP)",
+      "DevOps Engineer",
+      "Site Reliability Engineer",
+      "System Administrator",
+    ],
+  },
+  {
+    name: "Data & Analytics",
+    icon: <BarChart3 className="h-8 w-8" />,
+    jobs: [
+      "Data Engineer",
+      "Data Scientist",
+      "ML/AI Engineer",
+      "Business Intelligence Analyst",
+    ],
+  },
+  {
+    name: "Cybersecurity",
+    icon: <Shield className="h-8 w-8" />,
+    jobs: [
+      "Security Engineer",
+      "Penetration Tester",
+      "Security Analyst",
+      "Compliance Manager",
+    ],
+  },
+  {
+    name: "Product & Management",
+    icon: <Briefcase className="h-8 w-8" />,
+    jobs: [
+      "Product Manager",
+      "Technical Project Manager",
+      "Scrum Master",
+      "Engineering Manager",
+    ],
+  },
+];
 
 const JobCategories = () => {
   return (
-    <div className={styles.jobCategories}>
-      <h2>Job Categories</h2>
-      <div className={styles.categories}>
-        <div className={styles.category}>
-          <h3>Software Development</h3>
-          <ul>
-            <li>Full Stack Developer</li>
-            <li>Frontend Developer (React, Angular, Vue)</li>
-            <li>Backend Developer (Java, Python, Node.js)</li>
-            <li>Mobile Developer (iOS, Android, React Native)</li>
-          </ul>
-        </div>
-        <div className={styles.category}>
-          <h3>Cloud & Infrastructure</h3>
-          <ul>
-            <li>Cloud Engineer (AWS, Azure, GCP)</li>
-            <li>DevOps Engineer</li>
-            <li>Site Reliability Engineer</li>
-            <li>System Administrator</li>
-          </ul>
-        </div>
-        <div className={styles.category}>
-          <h3>Data & Analytics</h3>
-          <ul>
-            <li>Data Engineer</li>
-            <li>Data Scientist</li>
-            <li>ML/AI Engineer</li>
-            <li>Business Intelligence Analyst</li>
-          </ul>
-        </div>
-        <div className={styles.category}>
-          <h3>Cybersecurity</h3>
-          <ul>
-            <li>Security Engineer</li>
-            <li>Penetration Tester</li>
-            <li>Security Analyst</li>
-            <li>Compliance Manager</li>
-          </ul>
-        </div>
-        <div className={styles.category}>
-          <h3>Product & Management</h3>
-          <ul>
-            <li>Product Manager</li>
-            <li>Technical Project Manager</li>
-            <li>Scrum Master</li>
-            <li>Engineering Manager</li>
-          </ul>
+    <section className="py-16 sm:py-24 bg-muted/40">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold tracking-tight text-center text-foreground sm:text-4xl mb-12">
+          Explore Job Categories
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category) => (
+            <div
+              key={category.name}
+              className="bg-card border border-border rounded-xl p-6 shadow-card-shadow hover-lift flex flex-col"
+            >
+              <div className="flex items-center mb-4">
+                <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-foreground ml-4">
+                  {category.name}
+                </h3>
+              </div>
+              <ul className="space-y-2 text-muted-foreground list-disc list-inside flex-grow">
+                {category.jobs.map((job) => (
+                  <li key={job}>{job}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

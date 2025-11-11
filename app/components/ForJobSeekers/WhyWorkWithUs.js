@@ -1,49 +1,73 @@
-import React from 'react';
-import styles from '../../for-job-seekers/ForJobSeekers.module.css';
+"use client";
+import {
+  Building2,
+  TrendingUp,
+  BadgePercent,
+  HeartHandshake,
+} from "lucide-react";
+
+const benefits = [
+  {
+    name: "Access to Top Companies",
+    description:
+      "Get exclusive access to job opportunities at over 50 partner companies, from innovative startups to Fortune 500 firms, with direct connections to hiring managers.",
+    icon: <Building2 className="h-6 w-6" />,
+  },
+  {
+    name: "Career Growth Focus",
+    description:
+      "We focus on your long-term success with career planning, skill development guidance, and access to growth-oriented roles with competitive compensation.",
+    icon: <TrendingUp className="h-6 w-6" />,
+  },
+  {
+    name: "Completely Free Service",
+    description:
+      "Our service is 100% free for job seekers. No fees, no hidden costs—just complete transparency. Your success is our success.",
+    icon: <BadgePercent className="h-6 w-6" />,
+  },
+  {
+    name: "Expert Support",
+    description:
+      "Receive dedicated support from IT career counselors, including resume optimization, interview preparation, and salary negotiation assistance.",
+    icon: <HeartHandshake className="h-6 w-6" />,
+  },
+];
 
 const WhyWorkWithUs = () => {
   return (
-    <div className={styles.whyWorkWithUs}>
-      <h2>Why Work With Trio Tech Solutions</h2>
-      <div className={styles.reasons}>
-        <div className={styles.reason}>
-          <h3>Access to Top Companies</h3>
-          <ul>
-            <li>50+ partner companies hiring</li>
-            <li>Startups to Fortune 500 firms</li>
-            <li>Exclusive job opportunities</li>
-            <li>Direct connections to hiring managers</li>
-          </ul>
+    <section id="benefits" className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-primary">
+            Your Career Partner
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Why Work With Trio Tech Solutions
+          </p>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            Discover the advantages of partnering with a specialized IT
+            recruitment agency dedicated to your career success.
+          </p>
         </div>
-        <div className={styles.reason}>
-          <h3>Career Growth Focus</h3>
-          <ul>
-            <li>Long-term career planning</li>
-            <li>Skill development guidance</li>
-            <li>Competitive compensation</li>
-            <li>Growth-oriented roles</li>
-          </ul>
-        </div>
-        <div className={styles.reason}>
-          <h3>Free Service for You</h3>
-          <ul>
-            <li>No fees for job seekers</li>
-            <li>No hidden costs</li>
-            <li>Complete transparency</li>
-            <li>Your success is our success</li>
-          </ul>
-        </div>
-        <div className={styles.reason}>
-          <h3>Expert Support</h3>
-          <ul>
-            <li>IT career counseling</li>
-            <li>Resume optimization</li>
-            <li>Interview preparation</li>
-            <li>Salary negotiation assistance</li>
-          </ul>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div key={benefit.name} className="relative pl-16">
+                <dt className="text-xl font-semibold leading-7 text-foreground">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                    {benefit.icon}
+                  </div>
+                  {benefit.name}
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-muted-foreground">
+                  {benefit.description}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
