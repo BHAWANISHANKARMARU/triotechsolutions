@@ -41,7 +41,10 @@
   transition: color 0.2s ease-in-out;
 }
 
-
+.logoInvert {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
 
 .navLink {
   color: var(--nav-link-color);
@@ -54,7 +57,7 @@
 }
 
 .navLink::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -70,6 +73,11 @@
 
 .navLink:hover::after {
   width: 100%;
+}
+
+.navLink.active {
+  color: var(--nav-link-hover-color);
+  font-weight: 600;
 }
 
 .searchButton {
@@ -109,4 +117,22 @@
   visibility: visible;
   pointer-events: auto; /* Interactive on hover */
   clip-path: inset(0 0 0 0);
+}
+
+/* Dropdown Animation */
+.dropdownAnimation {
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

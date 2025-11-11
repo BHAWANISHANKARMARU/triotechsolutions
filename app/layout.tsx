@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"; // Changed from Geist to Inter
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
+
 const inter = Inter({
   variable: "--font-sans", // Using --font-sans for Inter
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        
       </body>
     </html>
   );

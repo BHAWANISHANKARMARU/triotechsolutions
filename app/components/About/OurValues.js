@@ -1,42 +1,56 @@
-import React from 'react';
-import styles from './About.module.css';
+"use client";
+
+const values = [
+  {
+    name: "Excellence",
+    description:
+      "Commitment to quality in every placement, rigorous candidate vetting, and a continuous improvement mindset.",
+  },
+  {
+    name: "Integrity",
+    description:
+      "Transparent communication, honest assessments, and ethical business practices are the foundation of our work.",
+  },
+  {
+    name: "Partnership",
+    description:
+      "We build long-term relationships over transactions, understanding your unique needs to support success at every stage.",
+  },
+  {
+    name: "Innovation",
+    description:
+      "Utilizing modern recruitment technology and agile hiring processes to provide adaptive solutions for changing needs.",
+  },
+];
 
 const OurValues = () => {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>Our Values</h2>
-      <div className={`${styles.grid} ${styles.gridFour}`}>
-        <div className={styles.card}>
-          <h3>Excellence</h3>
-          <ul>
-            <li>Commitment to quality in every placement</li>
-            <li>Rigorous candidate vetting process</li>
-            <li>Continuous improvement mindset</li>
-          </ul>
+    <section id="values" className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-primary">
+            Our Core Values
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            The Principles That Guide Us
+          </p>
         </div>
-        <div className={styles.card}>
-          <h3>Integrity</h3>
-          <ul>
-            <li>Transparent communication</li>
-            <li>Honest assessments</li>
-            <li>Ethical business practices</li>
-          </ul>
-        </div>
-        <div className={styles.card}>
-          <h3>Partnership</h3>
-          <ul>
-            <li>Long-term relationships over transactions</li>
-            <li>Understanding your unique needs</li>
-            <li>Supporting success at every stage</li>
-          </ul>
-        </div>
-        <div className={styles.card}>
-          <h3>Innovation</h3>
-          <ul>
-            <li>Modern recruitment technology</li>
-            <li>Agile hiring processes</li>
-            <li>Adaptive solutions for changing needs</li>
-          </ul>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
+            {values.map((value) => (
+              <div
+                key={value.name}
+                className="flex flex-col p-6 bg-card border border-border rounded-xl shadow-card-shadow hover-lift text-center"
+              >
+                <dt className="text-xl font-semibold leading-7 text-foreground">
+                  {value.name}
+                </dt>
+                <dd className="mt-2 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
+                  <p className="flex-auto">{value.description}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

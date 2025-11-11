@@ -6,6 +6,9 @@ import Testimonials from './components/Homepage/Testimonials';
 import WhyChooseUs from './components/Homepage/WhyChooseUs';
 import CTA from './components/Homepage/CTA';
 
+
+
+
 export default function Home() {
   return (
     <main>
@@ -16,6 +19,8 @@ export default function Home() {
       <Testimonials />
       <WhyChooseUs />
       <CTA />
+      
+      
     </main>
   );
 }
