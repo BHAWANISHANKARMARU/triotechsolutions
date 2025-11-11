@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 
+
 export const metadata: Metadata = {
     title: 'Services - Trio Tech Solutions',
     description: 'Our IT staffing and recruitment services.',
