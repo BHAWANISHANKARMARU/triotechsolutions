@@ -127,6 +127,10 @@ const Navbar = () => {
         title: "Our Staffing Solutions",
         links: [
           {
+            title: "All Services",
+            href: "/services",
+          },
+          {
             title: "Permanent Recruitment",
             href: "/services/permanent-recruitment",
           },

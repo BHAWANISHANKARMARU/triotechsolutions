@@ -48,7 +48,7 @@ const Testimonials = () => {
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <img
-                      className="w-12 h-12 rounded-full "
+                      className="w-12 h-12 rounded-full  "
                       src={testimonial.avatar}
                       alt={`Avatar of ${testimonial.author}`}
                       width={48}

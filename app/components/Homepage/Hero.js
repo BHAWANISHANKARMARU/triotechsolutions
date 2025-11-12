@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import herohome from "../../../assats/herohome.svg";
+import herohome from "../../../assats/herogif.gif";
 
 const Hero = () => {
   return (
