@@ -4,9 +4,9 @@ import { Linkedin } from "lucide-react";
 
 const team = [
   {
-    name: "[Name Placeholder]",
+    name: "Arjun Mehta",
     role: "Founder & CEO",
-    imageUrl: "/images/placeholder-avatar.png", // Replace with actual image path
+    imageUrl: "https://randomuser.me/api/portraits/men/75.jpg",
     bio: [
       "5+ years in IT recruitment.",
       "Technology industry veteran.",
@@ -52,8 +52,8 @@ const LeadershipTeam = () => {
               className="bg-card p-8 rounded-xl border border-border shadow-card-shadow hover-lift flex flex-col items-center text-center"
             >
               <div className="relative">
-                <Image
-                  className="mx-auto h-32 w-32 rounded-full object-cover"
+                <img
+                  className="mx-auto h-32 w-32 rounded-full "
                   src={person.imageUrl}
                   alt={`Photo of ${person.name}`}
                   width={128}

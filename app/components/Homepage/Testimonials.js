@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const Testimonials = () => {
   const testimonials = [
     {
@@ -7,6 +9,7 @@ const Testimonials = () => {
         "Trio Tech Solutions helped us scale our engineering team quickly. Their deep understanding of IT roles made all the difference.",
       author: "Rajesh Kumar",
       title: "CTO, TechVenture Inc.",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
       rating: 5,
     },
     {
@@ -14,6 +17,7 @@ const Testimonials = () => {
         "Outstanding service! They found us a perfect DevOps engineer within a week. Professional and efficient.",
       author: "Priya Sharma",
       title: "VP Engineering, CloudScale Systems",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
       rating: 5,
     },
     {
@@ -21,6 +25,7 @@ const Testimonials = () => {
         "Their campus hiring program helped us build a strong junior developer team. Highly recommend!",
       author: "Amit Patel",
       title: "HR Director, InnovateSoft",
+      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
       rating: 5,
     },
   ];
@@ -47,7 +52,17 @@ const Testimonials = () => {
               </div>
               <div className="mt-6">
                 <div className="flex items-center">
-                  <div>
+                  <div className="flex-shrink-0">
+                    <img
+                      className="w-12 h-12 rounded-full"
+                      src={testimonial.avatar}
+                      alt={`Avatar of ${testimonial.author}`}
+                      width={48}
+                      height={48}
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className="ml-4">
                     <p className="font-semibold text-foreground">
                       {testimonial.author}
                     </p>

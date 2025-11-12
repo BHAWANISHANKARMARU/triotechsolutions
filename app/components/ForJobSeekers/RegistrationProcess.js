@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { UserPlus, UploadCloud, FileText, Search } from "lucide-react";
+import Image from "next/image";
+import signup from "../../../assats/signup.svg";
 
 const steps = [
   {
@@ -43,21 +45,35 @@ const RegistrationProcess = () => {
             find you.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((item) => (
-            <div
-              key={item.step}
-              className="text-center flex flex-col items-center"
-            >
-              <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-xl mb-4">
-                {item.step}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column: Steps */}
+          <div className="space-y-8">
+            {steps.map((item) => (
+              <div key={item.step} className="flex items-start">
+                <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg">
+                  {item.step}
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground">{item.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Right Column: Image */}
+          <div className="animate-fade-in-up">
+            <Image
+              src={signup}
+              alt="Illustration of the signup process"
+              width={500}
+              height={450}
+              className="w-full max-w-md mx-auto"
+            />
+          </div>
         </div>
         <div className="mt-16 text-center">
           <Link

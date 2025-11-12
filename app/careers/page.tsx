@@ -1,41 +1,32 @@
 import Link from "next/link";
-
-const jobOpenings = [
-  {
-    title: "Senior Frontend Developer",
-    location: "Remote",
-    description:
-      "We are looking for an experienced Frontend Developer to join our team. You will be responsible for building the next generation of our user interface.",
-  },
-  {
-    title: "Product Manager",
-    location: "New York, NY",
-    description:
-      "We are looking for a Product Manager to help us build the future of our platform. You will be responsible for the product roadmap and strategy.",
-  },
-  {
-    title: "UX/UI Designer",
-    location: "Remote",
-    description:
-      "We are looking for a talented UX/UI Designer to create amazing user experiences. You will be responsible for the design of our web and mobile applications.",
-  },
-];
+import {
+  Lightbulb,
+  Users,
+  Heart,
+  MapPin,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
+import jobOpenings from "@/data/company-jobs.json";
 
 const values = [
   {
     name: "Innovation",
     description:
       "We are constantly looking for new and better ways to do things. We are not afraid to take risks and try new things.",
+    icon: <Lightbulb className="h-8 w-8" />,
   },
   {
     name: "Collaboration",
     description:
       "We believe that the best ideas come from working together. We are a team of passionate individuals who are dedicated to helping each other succeed.",
+    icon: <Users className="h-8 w-8" />,
   },
   {
     name: "Customer Focus",
     description:
       "We are obsessed with our customers. We are constantly looking for ways to improve their experience and make their lives better.",
+    icon: <Heart className="h-8 w-8" />,
   },
 ];
 
@@ -43,7 +34,7 @@ export default function CareersPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-background py-20 md:py-32">
+      <section className="bg-background py-24 sm:py-32">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
             Join Our Team
@@ -56,7 +47,7 @@ export default function CareersPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 sm:py-24 bg-background/70">
+      <section className="py-16 sm:py-24 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-primary">
@@ -66,21 +57,24 @@ export default function CareersPage() {
               The Principles That Drive Us
             </p>
           </div>
-          <dl className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value) => (
               <div
                 key={value.name}
-                className="flex flex-col p-8 bg-card border border-border rounded-xl shadow-card-shadow hover-lift text-center"
+                className="flex flex-col items-center p-8 bg-card border border-border rounded-xl shadow-card-shadow hover-lift text-center"
               >
-                <dt className="text-xl font-semibold text-foreground">
+                <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-5">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">
                   {value.name}
-                </dt>
-                <dd className="mt-2 flex-auto text-muted-foreground">
+                </h3>
+                <p className="mt-2 flex-auto text-muted-foreground">
                   {value.description}
-                </dd>
+                </p>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </section>
 
@@ -95,29 +89,39 @@ export default function CareersPage() {
               Open Positions
             </p>
           </div>
-          <div className="mt-16 space-y-8">
-            {jobOpenings.map((job, index) => (
+          <div className="mt-16 max-w-4xl mx-auto space-y-8">
+            {jobOpenings.map((job) => (
               <div
-                key={index}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-card-shadow hover-lift"
+                key={job.id}
+                className="bg-card border border-border rounded-xl p-6 shadow-card-shadow hover-lift transition-all duration-300"
               >
-                <div>
-                  <h3 className="text-xl font-semibold text-primary">
-                    {job.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {job.location}
-                  </p>
-                  <p className="mt-3 text-base text-foreground/80 max-w-2xl">
-                    {job.description}
-                  </p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-primary">
+                      <Link href={`/careers/${job.id}`}>{job.title}</Link>
+                    </h3>
+                    <div className="mt-2 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-1 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Briefcase className="h-4 w-4" />
+                        <span>{job.department}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>{job.location}</span>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-base text-foreground/80 max-w-2xl">
+                      {job.description}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/careers/${job.id}`}
+                    className="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
+                  >
+                    <span>View Details</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
-                <Link
-                  href="/apply"
-                  className="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90"
-                >
-                  Apply Now
-                </Link>
               </div>
             ))}
           </div>
@@ -125,7 +129,7 @@ export default function CareersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-background/70">
+      <section className="py-16 sm:py-24 bg-muted/40">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Don't see an opening for you?

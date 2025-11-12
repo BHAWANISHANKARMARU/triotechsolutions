@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import stepbystep from "../../../assats/stepbystep.svg";
+
 const processSteps = [
   {
     step: "01",
@@ -40,24 +43,37 @@ const HowItWorks = () => {
             from application to your first day on the job.
           </p>
         </div>
-        <div className="relative max-w-2xl mx-auto">
-          <div
-            className="absolute left-4 top-0 h-full w-0.5 bg-border"
-            aria-hidden="true"
-          ></div>
-          {processSteps.map((item) => (
-            <div key={item.step} className="relative pl-12 pb-12 last:pb-0">
-              <div className="absolute left-0 top-1">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
-                  {item.step.charAt(1)}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column: Process Steps */}
+          <div className="relative">
+            <div
+              className="absolute left-4 top-0 h-full w-0.5 bg-border"
+              aria-hidden="true"
+            ></div>
+            {processSteps.map((item) => (
+              <div key={item.step} className="relative pl-12 pb-12 last:pb-0">
+                <div className="absolute left-0 top-1">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
+                    {item.step.charAt(1)}
+                  </div>
                 </div>
+                <h3 className="text-xl font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-muted-foreground">{item.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-muted-foreground">{item.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Right Column: Image */}
+          <div className="animate-fade-in-up">
+            <Image
+              src={stepbystep}
+              alt="Illustration of career path steps"
+              width={500}
+              height={500}
+              className="w-full max-w-md mx-auto"
+            />
+          </div>
         </div>
       </div>
     </section>

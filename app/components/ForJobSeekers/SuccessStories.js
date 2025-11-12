@@ -1,5 +1,6 @@
 "use client";
-import { Quote, User, Clock } from "lucide-react";
+import { Quote, Clock } from "lucide-react";
+import Image from "next/image";
 
 const stories = [
   {
@@ -8,6 +9,7 @@ const stories = [
     name: "Rohit M.",
     role: "DevOps Engineer",
     time: "Placed in 2 weeks",
+    avatar: "https://randomuser.me/api/portraits/men/81.jpg",
   },
   {
     quote:
@@ -15,6 +17,7 @@ const stories = [
     name: "Sneha K.",
     role: "Junior Developer",
     time: "Placed in 3 weeks",
+    avatar: "https://randomuser.me/api/portraits/women/82.jpg",
   },
   {
     quote:
@@ -22,6 +25,7 @@ const stories = [
     name: "Vikram S.",
     role: "Full Stack Developer",
     time: "Placed in 10 days",
+    avatar: "https://randomuser.me/api/portraits/men/83.jpg",
   },
 ];
 
@@ -42,12 +46,25 @@ const SuccessStories = () => {
               <p className="text-muted-foreground flex-grow mb-6">
                 &ldquo;{story.quote}&rdquo;
               </p>
-              <div className="mt-auto border-t border-border pt-4">
-                <p className="font-semibold text-foreground">{story.name}</p>
-                <p className="text-sm text-muted-foreground">{story.role}</p>
-                <p className="text-sm text-primary font-medium mt-2">
-                  {story.time}
-                </p>
+              <div className="mt-auto border-t border-border pt-4 flex items-center justify-between">
+                <div className="flex items-center">
+                  <img
+                    className="w-10 h-10 rounded-full "
+                    src={story.avatar}
+                    alt={`Avatar of ${story.name}`}
+                    width={40}
+                    height={40}
+                    objectFit="cover"
+                  />
+                  <div className="ml-3">
+                    <p className="font-semibold text-foreground">{story.name}</p>
+                    <p className="text-sm text-muted-foreground">{story.role}</p>
+                  </div>
+                </div>
+                <div className="text-sm text-primary font-medium flex items-center">
+                  <Clock className="h-4 w-4 mr-1.5" />
+                  <span>{story.time}</span>
+                </div>
               </div>
             </div>
           ))}

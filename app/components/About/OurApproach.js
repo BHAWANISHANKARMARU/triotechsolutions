@@ -1,5 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import Approach from "../../../assats/Approach.svg";
+import Approach2 from "../../../assats/Approach2.svg";
+
 const approachForEmployers = [
   {
     step: "01",
@@ -58,49 +62,74 @@ const OurApproach = () => {
             A tailored process for both companies and professionals.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-card p-8 rounded-xl border border-border shadow-card-shadow">
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
-              For Employers
-            </h3>
-            <div className="space-y-6">
-              {approachForEmployers.map((item) => (
-                <div key={item.step} className="relative pl-12">
-                  <div className="absolute left-0 top-0 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary/50">
-                      {item.step}
-                    </span>
+        <div className="space-y-20">
+          {/* For Employers Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-up">
+              <Image
+                src={Approach}
+                alt="Our approach for employers"
+                width={500}
+                height={400}
+                className="w-full max-w-md mx-auto"
+              />
+            </div>
+            <div className="bg-card p-8 rounded-xl border border-border shadow-card-shadow">
+              <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
+                For Employers
+              </h3>
+              <div className="space-y-6">
+                {approachForEmployers.map((item) => (
+                  <div key={item.step} className="relative pl-12">
+                    <div className="absolute left-0 top-0 flex items-center justify-center">
+                      <span className="text-3xl font-bold text-primary/50">
+                        {item.step}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-semibold text-foreground">
+                      {item.title}
+                    </h4>
+                    <p className="mt-1 text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">
-                    {item.title}
-                  </h4>
-                  <p className="mt-1 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-          <div className="bg-card p-8 rounded-xl border border-border shadow-card-shadow">
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
-              For Job Seekers
-            </h3>
-            <div className="space-y-6">
-              {approachForJobSeekers.map((item) => (
-                <div key={item.step} className="relative pl-12">
-                  <div className="absolute left-0 top-0 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary/50">
-                      {item.step}
-                    </span>
+
+          {/* For Job Seekers Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-up lg:order-last">
+              <Image
+                src={Approach2}
+                alt="Our approach for job seekers"
+                width={500}
+                height={400}
+                className="w-full max-w-md mx-auto"
+              />
+            </div>
+            <div className="bg-card p-8 rounded-xl border border-border shadow-card-shadow lg:order-first">
+              <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
+                For Job Seekers
+              </h3>
+              <div className="space-y-6">
+                {approachForJobSeekers.map((item) => (
+                  <div key={item.step} className="relative pl-12">
+                    <div className="absolute left-0 top-0 flex items-center justify-center">
+                      <span className="text-3xl font-bold text-primary/50">
+                        {item.step}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-semibold text-foreground">
+                      {item.title}
+                    </h4>
+                    <p className="mt-1 text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">
-                    {item.title}
-                  </h4>
-                  <p className="mt-1 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

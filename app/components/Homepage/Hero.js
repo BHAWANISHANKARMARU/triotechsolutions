@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import herohome from "../../../assats/herohome.svg";
 
 const Hero = () => {
   return (
@@ -19,52 +20,54 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 pt-32 pb-20 md:pt-48 md:pb-28 text-center">
-        <h1
-          className="text-4xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-down"
-          // Removed text-shadow
-        >
-          Connect Top IT Talent with Leading Companies
-        </h1>
-        <p
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Expert IT staffing solutions that drive business growth and career
-          success.
-        </p>
-        <div
-          className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <Link
-            href="/for-employers"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-md text-lg font-medium transition-all transform hover:scale-105 flex items-center justify-center"
+      <div className="relative z-10 container mx-auto px-4 pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div className="text-center lg:text-left">
+            <h1
+              className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down"
+            >
+              Connect Top IT Talent with Leading Companies
+            </h1>
+            <p
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              Expert IT staffing solutions that drive business growth and career
+              success.
+            </p>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up"
+              style={{ animationDelay: "0.6s" }}
+            >
+              <Link
+                href="/for-employers"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-md text-lg font-medium transition-all transform hover:scale-105 flex items-center justify-center"
+              >
+                Find Top Talent
+              </Link>
+              <Link
+                href="/jobs"
+                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 h-12 px-8 rounded-md text-lg font-medium transition-all transform hover:scale-105 border border-border flex items-center justify-center"
+              >
+                Browse IT Jobs
+              </Link>
+            </div>
+          </div>
+
+          {/* Image Content */}
+          <div
+            className="mt-12 lg:mt-0 animate-fade-in-up"
+            style={{ animationDelay: "0.9s" }}
           >
-            {" "}
-            {/* Removed shadow-lg shadow-primary/30 */}
-            Find Top Talent
-          </Link>
-          <Link
-            href="/jobs"
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/90 h-12 px-8 rounded-md text-lg font-medium transition-all transform hover:scale-105 border border-border flex items-center justify-center"
-          >
-            Browse IT Jobs
-          </Link>
-        </div>
-        <div
-          className="mt-20 animate-fade-in-up"
-          style={{ animationDelay: "0.9s" }}
-        >
-          <p className="text-sm text-muted-foreground">
-            Trusted by innovative companies
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 opacity-60">
-            <div className="font-bold text-lg">Company A</div>
-            <div className="font-bold text-lg">TechCorp</div>
-            <div className="font-bold text-lg">Innovate Inc.</div>
-            <div className="font-bold text-lg">Solutions Co.</div>
-            <div className="font-bold text-lg">NextGen</div>
+            <Image
+              src={herohome}
+              alt="IT Staffing and Recruitment Process"
+              width={700}
+              height={542}
+              className="w-full max-w-2xl mx-auto"
+              priority
+            />
           </div>
         </div>
       </div>

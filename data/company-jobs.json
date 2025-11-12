@@ -1,0 +1,26 @@
+[
+  {
+    "id": "c1",
+    "title": "Technical Recruiter",
+    "department": "Human Resources",
+    "location": "Pune, India (Hybrid)",
+    "type": "Full-time",
+    "description": "Join our HR team to find and attract top-tier IT talent for our clients. You'll manage the full recruitment lifecycle, from sourcing to onboarding."
+  },
+  {
+    "id": "c2",
+    "title": "Business Development Manager",
+    "department": "Sales",
+    "location": "Bangalore, India (On-site)",
+    "type": "Full-time",
+    "description": "Drive our company's growth by identifying new business opportunities and building strong relationships with enterprise clients in the tech sector."
+  },
+  {
+    "id": "c3",
+    "title": "Marketing Intern",
+    "department": "Marketing",
+    "location": "Remote",
+    "type": "Internship",
+    "description": "Support our marketing team with digital campaigns, content creation, and social media management to enhance our brand presence."
+  }
+]
