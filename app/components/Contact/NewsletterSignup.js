@@ -21,7 +21,7 @@ export default function NewsletterSignup() {
             <div>
               <input type="checkbox" id="hiring-tips" name="hiring-tips" />
               <label htmlFor="hiring-tips">Hiring & Recruitment Tips</label>
-            </div>
+            </div> 
             <div>
               <input type="checkbox" id="industry-news" name="industry-news" />
               <label htmlFor="industry-news">Industry News & Trends</label>
