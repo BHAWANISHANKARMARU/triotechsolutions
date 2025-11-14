@@ -8,12 +8,12 @@ const Hero = () => {
     <section className="relative bg-background text-foreground overflow-hidden">
       {/* Background Grid and Glow */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,oklch(from_var(--primary)_l_c_h_/_0.3),transparent)]"></div>
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)",
+              "linear-gradient(to right,rgba(120, 124, 118, 0.07) 1px, transparent 1px), linear-gradient(to bottom,rgba(126, 131, 126, 0.07) 1px, transparent 1px)",
             backgroundSize: "36px 36px",
           }}
         ></div>
@@ -57,7 +57,7 @@ const Hero = () => {
 
           {/* Image Content */}
           <div
-            className="mt-12 lg:mt-0 animate-fade-in-up"
+            className="mt-12 lg:mt-0 "
             style={{ animationDelay: "0.9s" }}
           >
             <Image

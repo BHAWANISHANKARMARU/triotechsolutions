@@ -149,7 +149,7 @@ const Services = () => {
               key={service.title}
               className="bg-card border border-border rounded-xl p-8 text-center shadow-card-shadow hover-lift flex flex-col"
             >
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
                 {service.icon}
               </div>
               <h3 className="mt-6 text-xl font-semibold text-foreground">

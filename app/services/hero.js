@@ -32,7 +32,7 @@ const Hero = () => {
               </Link>
             </div>
           </div>
-          <div className="mt-12 lg:mt-0 animate-fade-in-up" style={{ animationDelay: "0.9s" }}>
+          <div className="mt-12 lg:mt-0 " style={{ animationDelay: "0.9s" }}>
             <Image src={heroServes} alt="Campus Hiring Solutions" width={500} height={500} className="w-full max-w-md mx-auto h-auto" priority />
           </div>
         </div>

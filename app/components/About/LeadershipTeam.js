@@ -17,19 +17,19 @@ const team = [
     },
   },
   // Example of a second team member. Uncomment and replace to add more.
-  // {
-  //   name: "[Another Name]",
-  //   role: "Head of Operations",
-  //   imageUrl: "/images/placeholder-avatar.png",
-  //   bio: [
-  //     "Expert in streamlining recruitment processes.",
-  //     "Ensures a seamless experience for clients.",
-  //     "Dedicated to operational excellence.",
-  //   ],
-  //   social: {
-  //     linkedin: "#",
-  //   },
-  // },
+  {
+    name: "Priya Sharma",
+    role: "Head of Operations",
+    imageUrl: "https://randomuser.me/api/portraits/women/75.jpg",
+    bio: [
+      "Expert in streamlining recruitment processes.",
+      "Ensures a seamless experience for clients.",
+      "Dedicated to operational excellence.",
+    ],
+    social: {
+      linkedin: "#",
+    },
+  },
   // Add more team members here
 ];
 
@@ -45,7 +45,7 @@ const LeadershipTeam = () => {
             Meet the experienced leader guiding our vision.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-4xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-4xl mx-auto">
           {team.map((person) => (
             <div
               key={person.name}

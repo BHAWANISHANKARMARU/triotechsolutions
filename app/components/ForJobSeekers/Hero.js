@@ -43,7 +43,7 @@ const Hero = () => {
 
           {/* Image Content */}
           <div
-            className="mt-12 lg:mt-0 animate-fade-in-up"
+            className="mt-12 lg:mt-0 "
             style={{ animationDelay: "0.9s" }}
           >
             <Image

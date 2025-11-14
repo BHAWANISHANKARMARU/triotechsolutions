@@ -58,7 +58,7 @@ const Features = () => {
               {industries.map((industry) => (
                 <div key={industry} className="flex items-center">
                   <svg
-                    className="h-5 w-5 text-primary mr-3 flex-shrink-0"
+                    className="h-8 w-8 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
