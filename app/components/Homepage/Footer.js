@@ -46,7 +46,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-muted border-t border-border">
+      
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand & Newsletter Section */}

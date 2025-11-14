@@ -21,104 +21,7 @@ const Navbar = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  // Data definitions remain the same
-  const aboutData = {
-    columns: [
-      {
-        title: "Our Company",
-        links: [
-          { title: "Our Story", href: "/about#story" },
-          { title: "Mission & Values", href: "/about#mission" },
-          { title: "Why Choose Us", href: "/about#why-choose-us" },
-        ],
-      },
-      {
-        title: "Our Team",
-        links: [
-          { title: "Leadership", href: "/about#team" },
-          { title: "Join Our Team", href: "/careers" },
-          { title: "Life at Trio Tech", href: "/careers#culture" },
-        ],
-      },
-      {
-        title: "Connect",
-        links: [
-          { title: "Contact Us", href: "/contact" },
-          { title: "Our Locations", href: "/contact#locations" },
-          { title: "LinkedIn", href: "#" },
-        ],
-      },
-    ],
-  };
-  const employersData = {
-    columns: [
-      {
-        title: "Our Solutions",
-        links: [
-          {
-            title: "Permanent Recruitment",
-            href: "/services/permanent-recruitment",
-          },
-          { title: "Contract Staffing", href: "/services/contract-staffing" },
-          { title: "Flexible Placement", href: "/services/flexible-placement" },
-          { title: "Outsourcing", href: "/services/outsourcing" },
-        ],
-      },
-      {
-        title: "Why Partner With Us?",
-        links: [
-          {
-            title: "Solve Hiring Challenges",
-            href: "/for-employers#challenges",
-          },
-          { title: "Our Process", href: "/for-employers#process" },
-          { title: "Success Stories", href: "/for-employers#success" },
-        ],
-      },
-      {
-        title: "Roles We Fill",
-        links: [
-          { title: "Software Development", href: "#" },
-          { title: "Cloud & Infrastructure", href: "#" },
-          { title: "Data & AI", href: "#" },
-        ],
-      },
-    ],
-  };
-  const jobSeekersData = {
-    columns: [
-      {
-        title: "Find a Job",
-        links: [
-          { title: "Browse IT Jobs", href: "/jobs" },
-          { title: "Job Categories", href: "/for-job-seekers#categories" },
-          {
-            title: "Types of Employment",
-            href: "/for-job-seekers#employment-types",
-          },
-        ],
-      },
-      {
-        title: "Career Growth",
-        links: [
-          { title: "Career Resources", href: "/for-job-seekers#resources" },
-          { title: "Resume Tips", href: "#" },
-          { title: "Interview Prep", href: "#" },
-        ],
-      },
-      {
-        title: "Why Work With Us?",
-        links: [
-          { title: "Benefits of Trio Tech", href: "/for-job-seekers#benefits" },
-          { title: "How It Works", href: "/for-job-seekers#process" },
-          {
-            title: "Success Stories",
-            href: "/for-job-seekers#success-stories",
-          },
-        ],
-      },
-    ],
-  };
+  // Data definitions remain the same...
   const servicesData = {
     columns: [
       {
@@ -313,7 +216,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={toggleTheme}
+            className="h-9 w-9 mr-2 flex items-center justify-center rounded-full border border-border text-muted-foreground"
+          >
+             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="h-9 w-9 flex items-center justify-center rounded-full border border-border text-muted-foreground"
@@ -340,15 +249,6 @@ const Navbar = () => {
               <MobileNavLink title="For Job Seekers" href="/for-job-seekers" />
               <MobileNavLink title="Contact" href="/contact" />
             </ul>
-            <div className="border-t border-border mt-4 pt-4 flex items-center justify-center">
-              <button
-                onClick={toggleTheme}
-                className="h-10 w-full flex items-center justify-center rounded-md border border-border text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {isDarkMode ? <Sun size={20} className="mr-2"/> : <Moon size={20} className="mr-2"/>}
-                Toggle Theme
-              </button>
-            </div>
           </div>
         </div>
       )}

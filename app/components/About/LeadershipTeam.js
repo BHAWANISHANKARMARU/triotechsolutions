@@ -16,7 +16,6 @@ const team = [
       linkedin: "#",
     },
   },
-  // Example of a second team member. Uncomment and replace to add more.
   {
     name: "Priya Sharma",
     role: "Head of Operations",
@@ -30,7 +29,6 @@ const team = [
       linkedin: "#",
     },
   },
-  // Add more team members here
 ];
 
 const LeadershipTeam = () => {
@@ -42,10 +40,10 @@ const LeadershipTeam = () => {
             The Minds Behind Our Mission
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Meet the experienced leader guiding our vision.
+            Meet the experienced leaders guiding our vision.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 justify-center max-w-4xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-2 justify-center max-w-4xl mx-auto">
           {team.map((person) => (
             <div
               key={person.name}
